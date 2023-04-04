@@ -17,5 +17,27 @@ module.exports = {
       },
     },
     'gatsby-plugin-netlify',
+    {
+      backend: {
+        name: 'git-gateway',
+        branch: 'master',
+      },
+      media_folder: 'static/uploads',
+      public_folder: '/uploads',
+      collections: [
+        {
+          name: 'products',
+          label: 'Products',
+          folder: 'content/products',
+          create: true,
+          fields: [
+            { label: 'Title', name: 'title', widget: 'string' },
+            { label: 'Description', name: 'description', widget: 'markdown' },
+            { label: 'Price', name: 'price', widget: 'number' },
+            { label: 'Image', name: 'image', widget: 'image' },
+          ],
+        },
+      ],
+    },
   ],
 };
